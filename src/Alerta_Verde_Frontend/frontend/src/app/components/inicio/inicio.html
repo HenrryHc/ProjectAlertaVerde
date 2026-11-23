@@ -1,0 +1,39 @@
+<section class="hero-section">
+  <div class="container py-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-7">
+        <span class="eyebrow">🌿 TU VOZ MEJORA EL ENTORNO</span>
+        <h1 class="display-4 fw-bold mt-3">Pequeñas acciones.<br><span>Grandes cambios.</span></h1>
+        <p class="lead mt-3 mb-4">Alerta Verde conecta a la comunidad para identificar problemas, reportar incidencias y construir espacios más limpios, seguros y sostenibles.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a routerLink="/reportes/nuevo" class="btn btn-success btn-lg rounded-pill px-4">＋ Crear un reporte</a>
+          <a routerLink="/reportes" class="btn btn-outline-success btn-lg rounded-pill px-4">Ver reportes</a>
+        </div>
+      </div>
+      <div class="col-lg-5"><div class="hero-art"><div class="art-circle">🌱</div><div class="art-caption"><strong>Tu comunidad importa</strong><small>Participa en el cambio desde hoy</small></div></div></div>
+    </div>
+  </div>
+</section>
+<section class="container py-5">
+  <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4">
+    <div><span class="eyebrow">PANEL DE ACTIVIDAD</span><h2 class="section-title mt-1">Resumen de la comunidad</h2></div>
+    <a routerLink="/reportes" class="text-success fw-semibold text-decoration-none">Gestionar reportes →</a>
+  </div>
+  <div class="row g-3">
+    <div class="col-6 col-lg-3"><div class="stat-card"><span class="stat-icon">📋</span><div class="stat-number">{{ total() }}</div><div class="stat-label">Reportes totales</div></div></div>
+    <div class="col-6 col-lg-3"><div class="stat-card"><span class="stat-icon">🕒</span><div class="stat-number">{{ pendientes() }}</div><div class="stat-label">Pendientes</div></div></div>
+    <div class="col-6 col-lg-3"><div class="stat-card"><span class="stat-icon">🔎</span><div class="stat-number">{{ revision() }}</div><div class="stat-label">En revisión</div></div></div>
+    <div class="col-6 col-lg-3"><div class="stat-card"><span class="stat-icon">✓</span><div class="stat-number">{{ atendidos() }}</div><div class="stat-label">Atendidos</div></div></div>
+  </div>
+  <div class="impact-strip mt-4"><div><span class="eyebrow">IMPACTO SOCIAL</span><h3 class="h4 fw-bold mt-1 mb-1">Una comunidad más consciente empieza contigo.</h3><p class="mb-0 text-muted">Identifica una situación, documenta lo que ocurre y ayuda a generar soluciones.</p></div><span class="impact-leaf">🌳</span></div>
+  <div class="mt-5"><h3 class="h5 fw-bold mb-3">Reportes recientes</h3>
+    <div class="row g-3">
+      @for (r of reportes().slice(0,3); track r.id) {
+        <div class="col-md-4"><article class="mini-report">
+          @if (r.imagen) { <img [src]="r.imagen" [alt]="r.titulo"> } @else { <div class="image-placeholder">🌿</div> }
+          <div class="p-3"><span class="status-chip">{{ r.estado }}</span><h4 class="h6 fw-bold mt-2">{{ r.titulo }}</h4><p class="small text-muted mb-0">{{ r.ubicacion }}</p></div>
+        </article></div>
+      } @empty { <div class="col-12"><div class="empty-state"><span>🌱</span><p>Aún no hay reportes. ¡Sé la primera persona en compartir uno!</p><a routerLink="/reportes/nuevo" class="btn btn-success rounded-pill">Crear primer reporte</a></div></div> }
+    </div>
+  </div>
+</section>
