@@ -1,1 +1,0 @@
-var o=[`Basura doméstica`,`Desmonte`,`Plásticos`,`Otros`];var t=[`Huancayo`,`El Tambo`,`Chilca`,`Pilcomayo`,`Palián`];var e=[`Pendiente`,`En revisión`,`Atendido`];export{o as n,t as r,e as t};

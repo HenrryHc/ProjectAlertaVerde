@@ -1,1 +1,0 @@
-import{O,Y as _e,i as Ao,lt as h}from"./main-AFQEINLI.js";function w(t){t||(t=h(_e));let i=new O(e=>{if(t.destroyed){e.next();return}return t.onDestroy(e.next.bind(e))});return e=>e.pipe(Ao(i))}export{w as t};

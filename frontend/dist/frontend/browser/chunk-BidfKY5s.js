@@ -1,2 +1,0 @@
-import{ht as mr}from"./main-AFQEINLI.js";function c(n){if(n instanceof mr){let e=n.error?.detail;if(typeof e==`string`&&e.trim())return e;if(Array.isArray(e)){let o=e.map(r=>{let t=Array.isArray(r.loc)?r.loc.filter(s=>s!==`body`).join(`.`):``;return t?`${t}: ${r.msg??`valor inválido`}`:r.msg}).filter(r=>!!r);if(o.length>0)return o.join(`
-`)}return n.status===0?`No se pudo conectar con el backend. Verifica que esté activo.`:n.message||`Error ${n.status}.`}return`Ocurrió un error inesperado.`}export{c as t};
