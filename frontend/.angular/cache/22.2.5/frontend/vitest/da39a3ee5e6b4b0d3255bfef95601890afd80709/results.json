@@ -1,0 +1,1 @@
+{"version":1,"projects":{"frontend":{"files":{"src/app/app.spec.ts":{"failed":false,"duration":234.85329999999976,"lastRun":1795463107036},"src/app/services/auth.service.spec.ts":{"failed":false,"duration":54.31860000000006,"lastRun":1795463107036},"src/app/services/reporte.service.spec.ts":{"failed":false,"duration":41.35730000000012,"lastRun":1795463107036}}}}}
