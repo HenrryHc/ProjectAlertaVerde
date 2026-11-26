@@ -1,3 +1,4 @@
+
 from datetime import datetime
 from enum import Enum
 
@@ -38,12 +39,14 @@ class ReporteBase(BaseModel):
         description="Dirección o referencia escrita del lugar.",
         examples=["Av. Giraldez cuadra 5, frente al parque"],
     )
+
     descripcion: str = Field(
         ...,
         min_length=10,
         max_length=500,
         examples=["Desmonte acumulado fuera del horario de recojo."],
     )
+
     foto_url: str | None = Field(
         default=None,
         max_length=300,
@@ -57,16 +60,16 @@ class ReporteCreate(ReporteBase):
 
 
 class ReporteUpdate(ReporteBase):
-    """Datos modificables de un reporte (el estado se cambia aparte)."""
+    """Datos modificables de un reporte."""
 
 
 class EstadoUpdate(BaseModel):
     """Datos para cambiar el estado de un reporte."""
 
-
     model_config = ConfigDict(str_strip_whitespace=True)
 
     estado: Estado = Field(..., examples=["En revisión"])
+
     comentario: str | None = Field(
         default=None,
         max_length=300,

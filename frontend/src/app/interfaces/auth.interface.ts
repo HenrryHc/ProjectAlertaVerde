@@ -5,7 +5,16 @@ export interface Usuario {
   fecha_creacion: string;
 }
 
-/** Sesión activa en el navegador. Solo se guarda el email. */
+/** Respuesta que devuelve FastAPI al iniciar sesión o registrarse. */
+export interface LoginResponse {
+  access_token: string;
+  token_type: 'bearer';
+  expires_in: number;
+  usuario: Usuario;
+}
+
+/** Datos de sesión que se conservan en el navegador. */
 export interface Sesion {
   email: string;
+  access_token: string;
 }
